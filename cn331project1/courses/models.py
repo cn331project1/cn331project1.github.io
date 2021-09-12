@@ -11,4 +11,4 @@ class Course(models.Model):
     status = models.BooleanField()
     
     def __str__(self):
-        return f"{self.code} {self.subject} {self.semester}/{self.year} {self.seat} : {self.status}"
+        return f"{self.code} {self.subject}"
