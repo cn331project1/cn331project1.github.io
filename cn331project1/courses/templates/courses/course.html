@@ -1,0 +1,12 @@
+{% extends "courses/layout.html" %}
+
+{% block body %}
+
+    <h1>{{ course.code }} {{ course.subject }}</h1>
+    <h2>{{ course.semester }} / {{ course.year }}</h2>
+    <h2>limit amount: {{ course.seat }}</h2>
+    <h2>Status: {{ course.status }}</h2>
+
+
+    <a href="{% url "courses:index" %}">Back to Course List</a>
+{% endblock %}

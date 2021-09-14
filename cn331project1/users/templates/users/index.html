@@ -8,5 +8,7 @@
         <li>Username: {{ request.user.username }}</li>
         <li>Email: {{ request.user.email }}</li>
     </ul>
+    
+    <a href="{% url 'courses:index' %}">Course list</a><br>
     <a href="{% url 'users:logout' %}">Log out</a>
 {% endblock %}
