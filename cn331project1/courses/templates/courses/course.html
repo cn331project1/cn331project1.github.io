@@ -2,11 +2,33 @@
 
 {% block body %}
 
-    <h1>{{ course.code }} {{ course.subject }}</h1>
-    <h2>{{ course.semester }} / {{ course.year }}</h2>
-    <h2>limit amount: {{ course.seat }}</h2>
-    <h2>Status: {{ course.status }}</h2>
-
-
-    <a href="{% url "courses:index" %}">Back to Course List</a>
+    <h1>{{ course.code }} {{ course.name }}</h1>
+    <ul>
+    <li>{{ course.semester }} / {{ course.year }}</li>
+    <li>capacity : {{ course.seat }}</li>
+    <li>Status: {{ course.status }}</li>
+    </ul>
+    
+    <h2>Student now : {{now}}</h2>
+    
+    <ul>
+        {% for i in students %}
+        <li>{{ i.first_name }} {{ i.last_name }}</li>
+        {% empty %}
+        <li>No studenet </li>
+        {% endfor %}
+    </ul>
+    
+    {% if course.status == True %}
+    {% if course.seat > now %}
+    <h3><a href="{% url 'courses:takecourse' course.code %}">Take this Course</a></h3> 
+    {% else %}
+    <h3>THIS COURSE IS FULL!!!</h3>
+    {% endif %}
+    <h3><a href="{% url 'courses:rmcourse' course.code %}">Remove this Course</a></h3>
+    <br>
+    {% else %}
+    <h3>THIS COURSE IS OFF!!!</h3>
+    {% endif %}
+    <h4><a href="{% url "courses:index" %}">Back to Course List</a></h3>
 {% endblock %}

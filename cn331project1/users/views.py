@@ -19,21 +19,14 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect(request.GET["next"])
+            return HttpResponseRedirect(reverse("users:index"))
         else:
             messages.warning(request, "Invalid credential.")
             return render(request, "users/login.html", {
                 "messages": messages.get_messages(request)
             })
 
-    if "next" in request.GET:
-        next = request.GET["next"]
-    else:
-        next = reverse("users:index")
-
-    return render(request, "users/login.html", {
-        "next": next
-    })
+    return render(request, "users/login.html")
 
 def logout_view(request):
     logout(request)
