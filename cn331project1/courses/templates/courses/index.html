@@ -1,12 +1,27 @@
-{% extends "courses/layout.html" %}
-
-{% block body %}
-    <h1>Course List</h1>
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Courses</title>
+        <link rel="stylesheet" type="text/css" href="{% static '/css/courses.css' %}">
+    </head>
+        <body>
+            {% block body %}
+    <q>Course List</q>
     <ul>
     {% for course in courses %}
-        <li><a href="{% url "courses:course" course.code %}"> {{ course }}</a></li>
+    <div class="container">
+        <div class="card">
+                <div class="cardcontent">
+                 <li><a href="{% url "courses:course" course.code %}"> {{ course }}</a></li>
+                </div>
+        </div>
+    </div>
     {% endfor %}
-    
+
     </ul>
     <p><a href="{% url 'users:index' %}">main</a></p>
 {% endblock %}
+
+        </body>
+</html>
