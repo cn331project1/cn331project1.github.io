@@ -5,20 +5,40 @@
     <h1>Welcome, {{ request.user.first_name }}</h1>
 
     <ul>
-        <li>Username: {{ request.user.username }}</li>
-        <li>Email: {{ request.user.email }}</li>
+        <br>
+        <p>Username: {{ request.user.username }}</p>
+        <p>Email: {{ request.user.email }}</p>
+        
     </ul>
-    
-    
+
+
     {% if perms.app_label.can_do_something %}
-    <a href="{% url 'admin:index' %}">manage courses</a><br>
-    
+    <div class="container">
+        <div class="card">
+            <div class="cardcontent">
+            <a href="{% url 'admin:index' %}">manage courses</a><br>
+            </div>
+        </div>
+    </div>
+
     {% else %}
-    <a href="{% url 'courses:index' %}">Course list</a><br>
-    
-    
+     <div class="container">
+        <div class="card">
+            <div class="cardcontent">
+            <a href="{% url 'courses:index' %}">Course list</a><br>
+            </div>
+        </div>
+    </div>
+
+
     {% endif %}
-    
-    
-    <a href="{% url 'users:logout' %}">Log out</a>
+
+    <div class="container">
+        <div class="card">
+            <div class="cardcontent">
+            <a href="{% url 'users:logout' %}">Log out</a>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
