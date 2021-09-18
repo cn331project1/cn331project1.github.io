@@ -22,11 +22,11 @@
     {% if course.status == True %}
     {% if course.seat > now %}
     <h3><a href="{% url 'courses:takecourse' course.code %}">Take this Course</a></h3> 
+    <h3><a href="{% url 'courses:rmcourse' course.code %}">Remove this Course</a></h3>
+    <br>
     {% else %}
     <h3>THIS COURSE IS FULL!!!</h3>
     {% endif %}
-    <h3><a href="{% url 'courses:rmcourse' course.code %}">Remove this Course</a></h3>
-    <br>
     {% else %}
     <h3>THIS COURSE IS OFF!!!</h3>
     {% endif %}

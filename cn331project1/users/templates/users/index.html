@@ -9,6 +9,16 @@
         <li>Email: {{ request.user.email }}</li>
     </ul>
     
+    
+    {% if perms.app_label.can_do_something %}
+    <a href="{% url 'admin:index' %}">manage courses</a><br>
+    
+    {% else %}
     <a href="{% url 'courses:index' %}">Course list</a><br>
+    
+    
+    {% endif %}
+    
+    
     <a href="{% url 'users:logout' %}">Log out</a>
 {% endblock %}
