@@ -3,14 +3,25 @@
   box-sizing:border-box;
 }
 body{
-  font-family: 'Lato', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-attachment: fixed;
+  flex-direction: column;
 }
 div.foo{
   width: 90%;
   margin: 0 auto;
   text-align: center;
+
 }
-.letter{
+.foo .letter{
   display: inline-block;
   font-weight: 900;
   font-size: 4em;
@@ -32,8 +43,8 @@ div.foo{
   transition: all 0.3s ease-in-out;
 }
 .letter:before{
-  color: rgb(58, 175, 211);
-  text-shadow: 
+  color: steelblue;
+  text-shadow:
     -1px 0px 1px rgba(14, 78, 218, 0.8),
     1px 0px 1px rgba(0,0,0,.8);
   z-index: 3;
@@ -66,8 +77,36 @@ div.foo{
     rotateY(40deg)
     rotateZ(0deg)
     skew(0deg,22deg);
+
 }
-body{
-  background: lightblue ;
- 
-  }
+
+foo .container {
+    position: relative;
+    width: 2000px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.foo .container .card:hover {
+    filter: blur(0px);
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.foo .container .card {
+    position: relative;
+    width: 400px;
+    height: 150px;
+    background: white;
+    margin: 0px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 3px 3px 10px rgba(14, 78, 218, 0.8);
+    transition: 0.5s;
+    text-align: center;
+}
+
+
+
+

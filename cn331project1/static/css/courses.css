@@ -10,16 +10,21 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: lightblue;
+    background-image: url('bgcl.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
     background-attachment: fixed;
     flex-direction: column;
 
 }
-q{
+
+q {
     font-size: 50px;
     color: coral;
 }
-p{
+
+p {
     font-size: 20px;
     color: coral;
     position: relative;
