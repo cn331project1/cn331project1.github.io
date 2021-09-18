@@ -10,13 +10,12 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('bgcl.jpg');
+    background-image: url('bglog.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
     background-attachment: fixed;
     flex-direction: column;
-
 }
 
 q {
