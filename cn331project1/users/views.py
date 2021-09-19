@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+import courses
 
 # Create your views here.
 
@@ -10,7 +11,12 @@ def index(request):
     if not request.user.is_authenticated:
         return HttpResponseRedirect(reverse("users:login"))
     else:
-        return render(request, "users/index.html")
+        get_subject = request.user.students.all()
+        return render(request, "users/index.html",{
+        "subject":get_subject,
+    })
+            
+   
 
 def login_view(request):
     if request.method == "POST":

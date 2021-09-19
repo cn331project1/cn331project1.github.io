@@ -3,12 +3,12 @@
 {% block body %}
 
     <h1>{{ course.code }} {{ course.name }}</h1>
-    <ul>
+    <ul><br>
     <li>{{ course.semester }} / {{ course.year }}</li>
-    <li>capacity : {{ course.seat }}</li>
+    <li>capacity : {{now}} / {{ course.seat }}</li>
     <li>Status: {{ course.status }}</li>
-    </ul>
-
+    </ul><br>
+     {% if perms.app_label.can_do_something %}
     <h2>Student now : {{now}}</h2>
 
     <ul>
@@ -16,20 +16,44 @@
         <li>{{ i.first_name }} {{ i.last_name }}</li>
         {% empty %}
         <li>No studenet </li>
-        {% endfor %}
+        {% endfor %}<br>
     </ul>
-    {% if not perms.app_label.can_do_something %}
+    {% else %}
+        {% if request.user in students %}
+            <h3>Already register</h3><br>
+        {% endif %}
         {% if course.status == True %}
         {% if course.seat > now %}
-        <h3><a href="{% url 'courses:takecourse' course.code %}">Take this Course</a></h3>
-        <h3><a href="{% url 'courses:rmcourse' course.code %}">Remove this Course</a></h3>
+            <div class="container">
+                <div class="card">
+                    <div class="cardcontent">
+                    <h3><a href="{% url 'courses:takecourse' course.code %}">Take this Course</a></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="card">
+                    <div class="cardcontent">
+                    <h3><a href="{% url 'courses:rmcourse' course.code %}">Remove this Course</a></h3>
+                    </div>
+                </div>
+            </div>
         <br>
         {% else %}
-        <h3>THIS COURSE IS FULL!!!</h3>
+        <h3>THIS COURSE IS FULL</h3>
         {% endif %}
         {% else %}
-        <h3>THIS COURSE IS OFF!!!</h3>
+        <h3>THIS COURSE IS OFF</h3>
         {% endif %}
+        <br>
     {% endif %}
-    <h4><a href="{% url "courses:index" %}">Back to Course List</a></h3>
+
+    <div class="container">
+        <div class="card">
+            <div class="cardcontent">
+            <h4><a href="{% url "courses:index" %}">Back to Course List</a></h3>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

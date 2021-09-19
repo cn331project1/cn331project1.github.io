@@ -9,32 +9,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-image: url('bg.jpg');
+    min-height: 100vh;
+    background-image: url('bgid.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
     background-attachment: fixed;
-
+    flex-direction: column;
 }
-
-q {
-    font-size: 50px;
-    color: Black;
-}
-
-p {
-    font-size: 20px;
-    color: coral;
-    position: relative;
-    display: inline-block;
-    padding: 10px 100px;
-    background: white;
-    border-radius: 10px;
-    text-decoration: none;
-
-}
-
 .container {
     position: relative;
     justify-content: center;
@@ -50,30 +32,27 @@ p {
 
 .container .card {
     position: relative;
-    width: 450px;
-    height: 80px;
+    width: 300px;
+    height: 50px;
     background: white;
-    margin: 20px auto;
+    margin: 10px auto;
     border-radius: 50px;
     overflow: hidden;
-    box-shadow: 3px 3px 10px steelblue;
+    box-shadow: 3px 3px 10px coral;
     transition: 0.5s;
     text-align: center;
 }
 
 
 .container .card .cardcontent{
-    padding-top: 10px;
     text-align: center;
 }
 
 .container .card .cardcontent a {
     position: relative;
     display: inline-block;
-    padding: 10px 10px;
-    background: lightblue;
+    padding: 15px;
     color: black;
-    border-radius: 20px;
     text-decoration: none;
-    margin-top: 10px;
+    font-size: 20px;
 }

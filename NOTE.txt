@@ -1,12 +1,12 @@
 Code:Subject:Semester:Year:Seat:Status
 
-CN331 Software Engineering : 1 : 2021 : 40 : ON
-CN350 Introduction to Cryptography : 1 : 2021 : 10 : ON
-CN320 Computer Network Configuration : 1 : 2021 : 10 : ON
-CN310 Computer Server Configuration : 1 : 2021 : 10 : ON
-CN361 Microprocessor System Design : 1 : 2021 : 4 : ON
-CN321 Data Communication and Computer Network I : 1 : 2021 : 10 : OFF
-CN330 Computer Application Developments : 1 : 2021 : 10 : ON
+CN331 Software Engineering : 1 : 2021 : 5 : ON
+CN350 Introduction to Cryptography : 1 : 2021 : 5 : ON
+CN320 Computer Network Configuration : 1 : 2021 : 5 : OFF
+CN310 Computer Server Configuration : 1 : 2021 : 5 : ON
+CN361 Microprocessor System Design : 1 : 2021 : 5 : ON
+CN321 Data Communication and Computer Network I : 1 : 2021 : 5 : OFF
+CN330 Computer Application Developments : 1 : 2021 : 5 : ON
 
 Student
 

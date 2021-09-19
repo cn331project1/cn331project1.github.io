@@ -8,10 +8,8 @@
         <br>
         <p>Username: {{ request.user.username }}</p>
         <p>Email: {{ request.user.email }}</p>
-
     </ul>
-
-
+    <br>
     {% if perms.app_label.can_do_something %}
     <div class="container">
         <div class="card">
@@ -20,6 +18,14 @@
             </div>
         </div>
     </div>
+    {% else %}
+    <br>
+    <h2>Registation</h2>
+    <br>
+    {% for x in subject  %}
+        <li>{{ x }}</li>
+    {% endfor %}
+    <br>
     {% endif %}
      <div class="container">
         <div class="card">
