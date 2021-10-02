@@ -32,7 +32,6 @@ def login_view(request):
                 "messages": messages.get_messages(request)
             })
 
-    return render(request, "users/login.html")
 
 def logout_view(request):
     logout(request)
