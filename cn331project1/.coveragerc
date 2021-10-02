@@ -1,0 +1,5 @@
+[run]
+omit=
+    */static/*
+    */migrations/*
+    */__init__.py/*
